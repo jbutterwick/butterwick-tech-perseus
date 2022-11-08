@@ -40,14 +40,14 @@ jobs:
       - name: Run tests
         run: cargo test --verbose
       - name: Run generation
-        run: perseus build
+        run: perseus export
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: '/dist'
+          path: '/dist/exported'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
