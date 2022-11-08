@@ -1,1 +1,5 @@
-dist/
+dist/pkg/
+dist/render_conf.json
+dist/static/
+dist/target_engine/
+dist/target_wasm/
