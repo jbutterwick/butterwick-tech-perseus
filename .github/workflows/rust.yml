@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Install cargo-hakari
+    - name: Install perseus-cli
       uses: baptiste0928/cargo-install@v1
       with:
         crate: perseus-cli
