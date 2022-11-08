@@ -1,28 +1,46 @@
-use perseus::Template;
-use sycamore::prelude::{view, Html, Scope, SsrNode, View};
+use perseus::{Html, RenderFnResultWithCause, SsrNode, Template};
+use sycamore::prelude::{view, Scope, View};
 
-#[perseus::template_rx]
-pub fn index_page<G: Html>(cx: Scope) -> View<G> {
-    view! { cx,
-        // Don't worry, there are much better ways of styling in Perseus!
-        div(style = "display: flex; flex-direction: column; justify-content: center; align-items: center; height: 95vh;") {
-            h1 { "Welcome to Perseus!" }
-            p {
-                "This is just an example app. Try changing some code inside "
-                code { "src/templates/index.rs" }
-                " and you'll be able to see the results here!"
-            }
-        }
-    }
+#[perseus::make_rx(IndexPageStateRx)]
+pub struct IndexPageState {
+    pub greeting: String,
 }
 
-#[perseus::head]
-pub fn head(cx: Scope) -> View<SsrNode> {
+#[perseus::template_rx]
+pub fn index_page<'a, G: Html>(cx: Scope<'a>, state: IndexPageStateRx<'a>) -> View<G> {
     view! { cx,
-        title { "Welcome to Perseus!" }
+        p { (state.greeting.get()) }
+        a(href = "about", id = "about-link") { "About!" }
     }
 }
 
 pub fn get_template<G: Html>() -> Template<G> {
-    Template::new("index").template(index_page).head(head)
+    Template::new("index")
+        .build_state_fn(get_build_state)
+        .template(index_page)
+        .head(head)
+        .build_paths_fn(build_paths)
 }
+
+#[perseus::head]
+pub fn head(cx: Scope, _props: IndexPageState) -> View<SsrNode> {
+    view! { cx,
+        title { "Index Page | Perseus Example – Basic" }
+    }
+}
+
+#[perseus::build_state]
+pub async fn get_build_state(
+    _path: String,
+    _locale: String,
+) -> RenderFnResultWithCause<IndexPageState> {
+    Ok(IndexPageState {
+        greeting: "Hello World!".to_string(),
+    })
+}
+
+#[perseus::build_paths]
+async fn build_paths() -> perseus::prelude::RenderFnResult<Vec<String>> {
+    Ok(vec!["".to_string(), "a test".to_string()])
+}
+
