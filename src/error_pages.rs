@@ -30,4 +30,3 @@ pub fn get_error_pages<G: Html>() -> ErrorPages<G> {
 
     error_pages
 }
-

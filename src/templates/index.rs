@@ -1,3 +1,4 @@
+use crate::components::{counter, hello};
 use perseus::{Html, RenderFnResultWithCause, SsrNode, Template};
 use sycamore::prelude::{view, Scope, View};
 
@@ -11,6 +12,8 @@ pub fn index_page<'a, G: Html>(cx: Scope<'a>, state: IndexPageStateRx<'a>) -> Vi
     view! { cx,
         p { (state.greeting.get()) }
         a(href = "about", id = "about-link") { "About!" }
+        counter::Counter {}
+        hello::Hello {}
     }
 }
 
@@ -43,4 +46,3 @@ pub async fn get_build_state(
 async fn build_paths() -> perseus::prelude::RenderFnResult<Vec<String>> {
     Ok(vec!["".to_string(), "a test".to_string()])
 }
-
