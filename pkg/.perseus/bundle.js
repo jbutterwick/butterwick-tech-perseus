@@ -180,8 +180,6 @@ function debugString(val) {
     return className;
 }
 
-<<<<<<< HEAD:dist/exported/.perseus/bundle.js
-=======
 function makeClosure(arg0, arg1, dtor, f) {
     const state = { a: arg0, b: arg1, cnt: 1, dtor };
     const real = (...args) => {
@@ -207,7 +205,6 @@ function __wbg_adapter_22(arg0, arg1) {
     wasm._dyn_core__ops__function__Fn_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h133c2a4e5cecb3bc(arg0, arg1);
 }
 
->>>>>>> 748d4bc (restructure directory, gix gitignore, use perseus export -e):pkg/.perseus/bundle.js
 function makeMutClosure(arg0, arg1, dtor, f) {
     const state = { a: arg0, b: arg1, cnt: 1, dtor };
     const real = (...args) => {
@@ -232,51 +229,6 @@ function makeMutClosure(arg0, arg1, dtor, f) {
 
     return real;
 }
-<<<<<<< HEAD:dist/exported/.perseus/bundle.js
-function __wbg_adapter_24(arg0, arg1, arg2) {
-    wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hfb7b4ff0e6a70cd5(arg0, arg1, addHeapObject(arg2));
-}
-
-function __wbg_adapter_27(arg0, arg1, arg2) {
-    wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hd7bfdd0d85f28759(arg0, arg1, addHeapObject(arg2));
-}
-
-function makeClosure(arg0, arg1, dtor, f) {
-    const state = { a: arg0, b: arg1, cnt: 1, dtor };
-    const real = (...args) => {
-        // First up with a closure we increment the internal reference
-        // count. This ensures that the Rust closure environment won't
-        // be deallocated while we're invoking it.
-        state.cnt++;
-        try {
-            return f(state.a, state.b, ...args);
-        } finally {
-            if (--state.cnt === 0) {
-                wasm.__wbindgen_export_2.get(state.dtor)(state.a, state.b);
-                state.a = 0;
-
-            }
-        }
-    };
-    real.original = state;
-
-    return real;
-}
-function __wbg_adapter_30(arg0, arg1) {
-    wasm._dyn_core__ops__function__Fn_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h5f33417f4c016cf0(arg0, arg1);
-}
-
-function __wbg_adapter_33(arg0, arg1, arg2) {
-    wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hb106e993152809da(arg0, arg1, addHeapObject(arg2));
-}
-
-function __wbg_adapter_36(arg0, arg1, arg2) {
-    wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__ha98350068e9cf24a(arg0, arg1, addHeapObject(arg2));
-}
-
-function __wbg_adapter_39(arg0, arg1) {
-    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hca182abbba1b051a(arg0, arg1);
-=======
 function __wbg_adapter_25(arg0, arg1, arg2) {
     wasm._dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hdeea68989c23003d(arg0, arg1, addHeapObject(arg2));
 }
@@ -287,7 +239,6 @@ function __wbg_adapter_28(arg0, arg1, arg2) {
 
 function __wbg_adapter_31(arg0, arg1) {
     wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hcd807d34c417224f(arg0, arg1);
->>>>>>> 748d4bc (restructure directory, gix gitignore, use perseus export -e):pkg/.perseus/bundle.js
 }
 
 function getCachedStringFromWasm0(ptr, len) {
@@ -436,154 +387,6 @@ imports.wbg.__wbg_querySelectorAll_3384c2b9ae37d92f = function() { return handle
     const ret = getObject(arg0).querySelectorAll(v0);
     return addHeapObject(ret);
 }, arguments) };
-<<<<<<< HEAD:dist/exported/.perseus/bundle.js
-imports.wbg.__wbg_setonupgradeneeded_17d0b9530f1e0cac = function(arg0, arg1) {
-    getObject(arg0).onupgradeneeded = getObject(arg1);
-};
-imports.wbg.__wbg_pathname_78a642e573bf8169 = function(arg0, arg1) {
-    const ret = getObject(arg1).pathname;
-    const ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    const len0 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len0;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
-};
-imports.wbg.__wbg_new_7d95b89914e4d377 = function() { return handleError(function (arg0, arg1) {
-    var v0 = getCachedStringFromWasm0(arg0, arg1);
-    const ret = new URL(v0);
-    return addHeapObject(ret);
-}, arguments) };
-imports.wbg.__wbg_rel_9f11a6a3d6609dad = function(arg0, arg1) {
-    const ret = getObject(arg1).rel;
-    const ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    const len0 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len0;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
-};
-imports.wbg.__wbg_origin_f636ba4599bbc3e5 = function(arg0, arg1) {
-    const ret = getObject(arg1).origin;
-    const ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    const len0 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len0;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
-};
-imports.wbg.__wbg_pathname_112cfb7bd5852c53 = function(arg0, arg1) {
-    const ret = getObject(arg1).pathname;
-    const ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    const len0 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len0;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
-};
-imports.wbg.__wbg_hash_3d72aec5c53d7e8a = function(arg0, arg1) {
-    const ret = getObject(arg1).hash;
-    const ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    const len0 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len0;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
-};
-imports.wbg.__wbg_newwithstrandinit_05d7180788420c40 = function() { return handleError(function (arg0, arg1, arg2) {
-    var v0 = getCachedStringFromWasm0(arg0, arg1);
-    const ret = new Request(v0, getObject(arg2));
-    return addHeapObject(ret);
-}, arguments) };
-imports.wbg.__wbg_target_bf704b7db7ad1387 = function(arg0) {
-    const ret = getObject(arg0).target;
-    return isLikeNone(ret) ? 0 : addHeapObject(ret);
-};
-imports.wbg.__wbg_preventDefault_3209279b490de583 = function(arg0) {
-    getObject(arg0).preventDefault();
-};
-imports.wbg.__wbg_href_90ff36b5040e3b76 = function(arg0, arg1) {
-    const ret = getObject(arg1).href;
-    const ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    const len0 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len0;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
-};
-imports.wbg.__wbg_result_9e399c14676970d9 = function() { return handleError(function (arg0) {
-    const ret = getObject(arg0).result;
-    return addHeapObject(ret);
-}, arguments) };
-imports.wbg.__wbg_error_aacf5ac191e54ed0 = function() { return handleError(function (arg0) {
-    const ret = getObject(arg0).error;
-    return isLikeNone(ret) ? 0 : addHeapObject(ret);
-}, arguments) };
-imports.wbg.__wbg_transaction_2a414baad674f8d4 = function(arg0) {
-    const ret = getObject(arg0).transaction;
-    return isLikeNone(ret) ? 0 : addHeapObject(ret);
-};
-imports.wbg.__wbg_setonsuccess_5f71593bc51653a3 = function(arg0, arg1) {
-    getObject(arg0).onsuccess = getObject(arg1);
-};
-imports.wbg.__wbg_setonerror_d5771cc5bf9ea74c = function(arg0, arg1) {
-    getObject(arg0).onerror = getObject(arg1);
-};
-imports.wbg.__wbg_length_4b03cbe342879df8 = function(arg0) {
-    const ret = getObject(arg0).length;
-    return ret;
-};
-imports.wbg.__wbg_get_eff2c5e76f778292 = function(arg0, arg1) {
-    const ret = getObject(arg0)[arg1 >>> 0];
-    return isLikeNone(ret) ? 0 : addHeapObject(ret);
-};
-imports.wbg.__wbg_instanceof_Comment_1758f7164ca9ea81 = function(arg0) {
-    let result;
-    try {
-        result = getObject(arg0) instanceof Comment;
-    } catch {
-        result = false;
-    }
-    const ret = result;
-    return ret;
-};
-imports.wbg.__wbg_altKey_6dbe46bf3ae42d67 = function(arg0) {
-    const ret = getObject(arg0).altKey;
-    return ret;
-};
-imports.wbg.__wbg_ctrlKey_fd79f035994d9387 = function(arg0) {
-    const ret = getObject(arg0).ctrlKey;
-    return ret;
-};
-imports.wbg.__wbg_shiftKey_908ae224b8722a41 = function(arg0) {
-    const ret = getObject(arg0).shiftKey;
-    return ret;
-};
-imports.wbg.__wbg_metaKey_cdd15bf44efb510e = function(arg0) {
-    const ret = getObject(arg0).metaKey;
-    return ret;
-};
-imports.wbg.__wbg_language_f8bf3d946408093d = function(arg0, arg1) {
-    const ret = getObject(arg1).language;
-    var ptr0 = isLikeNone(ret) ? 0 : passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    var len0 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len0;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
-};
-imports.wbg.__wbg_languages_1fd4c718eaeb903a = function(arg0) {
-    const ret = getObject(arg0).languages;
-    return addHeapObject(ret);
-};
-imports.wbg.__wbg_instanceof_Text_6855016c7825859b = function(arg0) {
-    let result;
-    try {
-        result = getObject(arg0) instanceof Text;
-    } catch {
-        result = false;
-    }
-    const ret = result;
-    return ret;
-};
-imports.wbg.__wbg_instanceof_Element_33bd126d58f2021b = function(arg0) {
-    let result;
-    try {
-        result = getObject(arg0) instanceof Element;
-    } catch {
-        result = false;
-    }
-    const ret = result;
-    return ret;
-};
-=======
->>>>>>> 748d4bc (restructure directory, gix gitignore, use perseus export -e):pkg/.perseus/bundle.js
 imports.wbg.__wbg_tagName_50571f9480ac166a = function(arg0, arg1) {
     const ret = getObject(arg1).tagName;
     const ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
@@ -886,8 +689,6 @@ imports.wbg.__wbg_global_ba75c50d1cf384f4 = function() { return handleError(func
     const ret = global.global;
     return addHeapObject(ret);
 }, arguments) };
-<<<<<<< HEAD:dist/exported/.perseus/bundle.js
-=======
 imports.wbg.__wbindgen_is_undefined = function(arg0) {
     const ret = getObject(arg0) === undefined;
     return ret;
@@ -896,7 +697,6 @@ imports.wbg.__wbg_new_0b9bfdd97583284e = function() {
     const ret = new Object();
     return addHeapObject(ret);
 };
->>>>>>> 748d4bc (restructure directory, gix gitignore, use perseus export -e):pkg/.perseus/bundle.js
 imports.wbg.__wbg_decodeURIComponent_0183f5f5ec5752fc = function() { return handleError(function (arg0, arg1) {
     var v0 = getCachedStringFromWasm0(arg0, arg1);
     const ret = decodeURIComponent(v0);
@@ -961,30 +761,6 @@ imports.wbg.__wbindgen_debug_string = function(arg0, arg1) {
 imports.wbg.__wbindgen_throw = function(arg0, arg1) {
     throw new Error(getStringFromWasm0(arg0, arg1));
 };
-<<<<<<< HEAD:dist/exported/.perseus/bundle.js
-imports.wbg.__wbindgen_closure_wrapper3087 = function(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 246, __wbg_adapter_24);
-    return addHeapObject(ret);
-};
-imports.wbg.__wbindgen_closure_wrapper3089 = function(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 248, __wbg_adapter_27);
-    return addHeapObject(ret);
-};
-imports.wbg.__wbindgen_closure_wrapper3091 = function(arg0, arg1, arg2) {
-    const ret = makeClosure(arg0, arg1, 241, __wbg_adapter_30);
-    return addHeapObject(ret);
-};
-imports.wbg.__wbindgen_closure_wrapper5036 = function(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 445, __wbg_adapter_33);
-    return addHeapObject(ret);
-};
-imports.wbg.__wbindgen_closure_wrapper5577 = function(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 472, __wbg_adapter_36);
-    return addHeapObject(ret);
-};
-imports.wbg.__wbindgen_closure_wrapper5708 = function(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 490, __wbg_adapter_39);
-=======
 imports.wbg.__wbindgen_closure_wrapper436 = function(arg0, arg1, arg2) {
     const ret = makeClosure(arg0, arg1, 129, __wbg_adapter_22);
     return addHeapObject(ret);
@@ -999,7 +775,6 @@ imports.wbg.__wbindgen_closure_wrapper1190 = function(arg0, arg1, arg2) {
 };
 imports.wbg.__wbindgen_closure_wrapper1281 = function(arg0, arg1, arg2) {
     const ret = makeMutClosure(arg0, arg1, 299, __wbg_adapter_31);
->>>>>>> 748d4bc (restructure directory, gix gitignore, use perseus export -e):pkg/.perseus/bundle.js
     return addHeapObject(ret);
 };
 

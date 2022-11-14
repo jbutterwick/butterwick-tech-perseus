@@ -117,13 +117,7 @@ name = "butterwick-tech-perseus"
 version = "0.0.1"
 dependencies = [
  "chrono",
-<<<<<<< HEAD
-=======
- "console_error_panic_hook",
- "console_log",
- "log",
  "ory-kratos-client",
->>>>>>> 748d4bc (restructure directory, gix gitignore, use perseus export -e)
  "perseus",
  "perseus-warp",
  "serde",
